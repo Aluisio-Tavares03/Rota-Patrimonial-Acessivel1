@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rota Patrimonial Acessível — v0.1</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Rota Patrimonial Acessível</h1>
+    <p class="aviso">Protótipo v0.1. Mapa simplificado do Bairro do Recife com valores de referência, ainda não conferidos em campo.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-busca" class="cartao">
+      <h2 id="titulo-busca">Planejar a rota</h2>
+
+      <form id="form-rota" novalidate>
+        <fieldset>
+          <legend>1. Seu perfil</legend>
+          <div id="lista-perfis" class="opcoes"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Saída e chegada</legend>
+          <div class="campo">
+            <label for="saida">Ponto de saída</label>
+            <select id="saida" name="saida"></select>
+          </div>
+          <div class="campo">
+            <label for="chegada">Ponto de chegada</label>
+            <select id="chegada" name="chegada"></select>
+          </div>
+        </fieldset>
+
+        <details class="interdicoes">
+          <summary>Simular trecho interditado (demonstração)</summary>
+          <p class="dica">Na v0.1 a interdição é marcada no mapa antes do cálculo (RN05). Marque um trecho para simular uma obra ou evento.</p>
+          <div id="lista-interdicoes" class="opcoes"></div>
+        </details>
+
+        <button type="submit" id="botao-calcular">Calcular rota</button>
+        <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section aria-labelledby="titulo-resultado" class="cartao">
+      <h2 id="titulo-resultado">Resultado</h2>
+      <div id="resultado" aria-live="polite">
+        <p class="vazio">Escolha o perfil, a saída e a chegada e clique em “Calcular rota”.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-mapa" class="cartao">
+      <h2 id="titulo-mapa">Mapa de referência</h2>
+      <h3>Pontos</h3>
+      <div class="tabela-rolagem">
+        <table id="tabela-pontos">
+          <thead><tr><th scope="col">Ponto</th><th scope="col">Descrição</th><th scope="col">Ponto de apoio</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <h3>Trechos</h3>
+      <div class="tabela-rolagem">
+        <table id="tabela-trechos">
+          <thead><tr><th scope="col">Trecho</th><th scope="col">Liga</th><th scope="col">Distância</th><th scope="col">Piso</th><th scope="col">Rampa nas pontas</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <h3>Penalidades por perfil</h3>
+      <div class="tabela-rolagem">
+        <table id="tabela-penalidades">
+          <thead><tr><th scope="col">Condição</th><th scope="col">Cadeirante</th><th scope="col">Carrinho de bebê</th><th scope="col">Idoso</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Fundamentos de Programação — AV2. <a href="./tests.html">Ver testes automáticos</a></p>
+  </footer>
+
+  <!-- Ordem importa: dados, depois regras, depois interface. -->
+  <script src="./mapa.js"></script>
+  <script src="./regras.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

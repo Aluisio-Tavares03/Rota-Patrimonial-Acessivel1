@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Testes — Rota Patrimonial Acessível v0.1</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .aprovado { color: #1a7f37; font-weight: 700; }
+    .reprovado { color: #a4161a; font-weight: 700; }
+    td code { white-space: pre-wrap; word-break: break-word; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <h1>Testes automáticos da v0.1</h1>
+    <p class="aviso">Estes testes chamam as mesmas funções de <code>regras.js</code> usadas pela aplicação. Abrir esta página executa os testes no seu navegador.</p>
+  </header>
+  <main>
+    <section class="cartao">
+      <p id="placar" class="total" aria-live="polite">Executando…</p>
+      <div class="tabela-rolagem">
+        <table>
+          <thead>
+            <tr><th scope="col">Teste</th><th scope="col">Descrição</th><th scope="col">Esperado</th><th scope="col">Observado</th><th scope="col">Situação</th></tr>
+          </thead>
+          <tbody id="corpo-testes"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="rodape"><p><a href="./index.html">Voltar para a aplicação</a></p></footer>
+
+  <script src="./mapa.js"></script>
+  <script src="./regras.js"></script>
+  <script src="./tests.js"></script>
+  <script>
+    (function () {
+      const corpo = document.getElementById("corpo-testes");
+      let aprovados = 0;
+      for (const t of resultadosTestes) {
+        const linha = corpo.insertRow();
+        linha.insertCell().textContent = t.id;
+        linha.insertCell().textContent = t.descricao;
+        linha.insertCell().innerHTML = "<code></code>";
+        linha.cells[2].firstChild.textContent = t.esperado;
+        linha.insertCell().innerHTML = "<code></code>";
+        linha.cells[3].firstChild.textContent = t.observado;
+        const situacao = linha.insertCell();
+        situacao.textContent = t.aprovado ? "Aprovado" : "Reprovado";
+        situacao.className = t.aprovado ? "aprovado" : "reprovado";
+        if (t.aprovado) aprovados++;
+      }
+      document.getElementById("placar").textContent =
+        aprovados + " de " + resultadosTestes.length + " testes aprovados.";
+    })();
+  </script>
+</body>
+</html>
