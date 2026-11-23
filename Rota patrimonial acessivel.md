@@ -263,18 +263,18 @@ Na v0.2, os testes da v0.1 (CA01 a CA08) devem ser executados de novo, com a op�
 
 O roteiro completo, com os passos para repetir, está em [`TESTES.md`](./TESTES.md). Os testes automáticos estão em `tests.html`.
 
-**Como os resultados abaixo foram obtidos.** Em 19/11/2026, `tests.html` e os passos de interface foram executados por um script automatizado no navegador (Chromium), que clicou nos campos e leu o texto da tela. Placar dos testes automáticos: **21 de 21 aprovados**. Na execução manual, cada responsável repete os passos, salva um print na pasta `evidencias/` e registra o resultado no `TESTES.md`.
+**Como os resultados abaixo foram obtidos.** Em 19/11/2026, `tests.html` e os passos de interface foram executados por um script automatizado no navegador (Chromium), que clicou nos campos e leu o texto da tela. Placar dos testes automáticos: **21 de 21 aprovados**. Na execução manual, cada responsável repete os passos, salva um print na pasta `evidencias/` e registra o resultado no próprio arquivo da pasta [`contribuicoes/`](./contribuicoes/README.md).
 
 | Teste | Entrada ou ação | Resultado esperado | Resultado observado (execução automatizada) | Situação | Responsável e evidência (execução manual) |
 |---|---|---|---|---|---|
-| M01 (CA01) | Abrir a página. | Três perfis e pontos E1 a E4. | Três perfis e pontos E1 a E4 exibidos. | Aprovado (automatizado) | Eric Guzik (T09). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
-| M02 (CA02) | Cadeirante, E1 → E4. | E1 → E2 → E3 → E4, 280 m, sem alertas, apoio em E2. | E1 → E2 → E3 → E4 (T1, T5, T4), 280 m, sem alertas, apoio em E2. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
-| M03 (CA03) | Carrinho de bebê, E1 → E4. | E1 → E2 → E3 → E4, 280 m, sem alertas. | E1 → E2 → E3 → E4, 280 m, sem alertas, custo 280, apoio em E2. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
-| M04 (CA04) | Idoso, E1 → E4. | E1 → E2 → E4, 200 m, alerta de paralelepípedo em T2, apoio em E2. | E1 → E2 → E4 (T1, T2), 200 m, alerta de paralelepípedo em T2, custo 250, apoio em E2. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
-| M05 (CA05) | Marcar T1 interditado; idoso, E1 → E4. | E1 → E3 → E4, 250 m, alerta de degrau em T3. | E1 → E3 → E4 (T3, T4), 250 m, alerta de degrau em T3. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
-| M06 (CA06) | Marcar T1 interditado; cadeirante, E1 → E4. | Mensagem de que não existe rota acessível; sem rota. | "Não existe rota acessível conhecida para o perfil Cadeirante entre esses pontos." | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
-| M07 (CA07) | Calcular sem escolher perfil. Na função: perfis "4" e "abc". | Mensagem de perfil inválido. | "Perfil inválido. Escolha cadeirante, idoso ou carrinho de bebê." (tela e função) | Aprovado (automatizado) | Eric Guzik (T09). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
-| M08 (CA08) | Mesmo ponto (E2) como saída e chegada. | Mensagem de que precisam ser diferentes. | "Saída e chegada precisam ser diferentes. Escolha de novo." | Aprovado (automatizado) | Eric Guzik (T09). Evidência: print em `evidencias/` e commit no `TESTES.md`. |
+| M01 (CA01) | Abrir a página. | Três perfis e pontos E1 a E4. | Três perfis e pontos E1 a E4 exibidos. | Aprovado (automatizado) | Eric Guzik (T09). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
+| M02 (CA02) | Cadeirante, E1 → E4. | E1 → E2 → E3 → E4, 280 m, sem alertas, apoio em E2. | E1 → E2 → E3 → E4 (T1, T5, T4), 280 m, sem alertas, apoio em E2. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
+| M03 (CA03) | Carrinho de bebê, E1 → E4. | E1 → E2 → E3 → E4, 280 m, sem alertas. | E1 → E2 → E3 → E4, 280 m, sem alertas, custo 280, apoio em E2. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
+| M04 (CA04) | Idoso, E1 → E4. | E1 → E2 → E4, 200 m, alerta de paralelepípedo em T2, apoio em E2. | E1 → E2 → E4 (T1, T2), 200 m, alerta de paralelepípedo em T2, custo 250, apoio em E2. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
+| M05 (CA05) | Marcar T1 interditado; idoso, E1 → E4. | E1 → E3 → E4, 250 m, alerta de degrau em T3. | E1 → E3 → E4 (T3, T4), 250 m, alerta de degrau em T3. | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
+| M06 (CA06) | Marcar T1 interditado; cadeirante, E1 → E4. | Mensagem de que não existe rota acessível; sem rota. | "Não existe rota acessível conhecida para o perfil Cadeirante entre esses pontos." | Aprovado (automatizado) | Luiz Targino (T10). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
+| M07 (CA07) | Calcular sem escolher perfil. Na função: perfis "4" e "abc". | Mensagem de perfil inválido. | "Perfil inválido. Escolha cadeirante, idoso ou carrinho de bebê." (tela e função) | Aprovado (automatizado) | Eric Guzik (T09). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
+| M08 (CA08) | Mesmo ponto (E2) como saída e chegada. | Mensagem de que precisam ser diferentes. | "Saída e chegada precisam ser diferentes. Escolha de novo." | Aprovado (automatizado) | Eric Guzik (T09). Evidência: print em `evidencias/` e commit no próprio arquivo em `contribuicoes/`. |
 
 Além dos critérios, `tests.html` verifica os custos de trecho (RN03), o bloqueio sem rampa (RN04), a interdição (RN05), o desempate por menor distância num mapa de teste (RN06), a distância sem penalidades (RN07), o sentido inverso dos trechos e que a simulação de interdição não altera o mapa original.
 
@@ -292,7 +292,7 @@ O prompt ([`PROMPT.md`](./PROMPT.md)) foi escrito a partir desta documentação,
 | T12 — Conferir o mapa e os testes automáticos | Conferir `mapa.js` contra as seções 5.1 e 5.2 e rodar `tests.html` | João Pohlmann | Eric Guzik |
 | T13 — Integrar, publicar e documentar | Implementação da v0.1 com apoio de IA, testes automáticos, `TESTES.md`, publicação e esta seção | Aluisio Tavares | Luiz Targino |
 
-O link de cada integrante mostra os commits feitos por ele no repositório. Cada um registra no `TESTES.md`, com um commit próprio, o resultado dos testes manuais pelos quais é responsável.
+O link de cada integrante mostra os commits feitos por ele no repositório. Cada integrante tem um arquivo próprio na pasta [`contribuicoes/`](./contribuicoes/README.md) e registra nele, com um commit pela própria conta, o que conferiu e o resultado dos testes pelos quais é responsável.
 
 | Integrante | O que fez na Entrega 2 | Link da contribuição | Como conferiu |
 |---|---|---|---|
