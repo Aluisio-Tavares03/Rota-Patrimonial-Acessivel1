@@ -1,6 +1,6 @@
 # Rota Patrimonial Acessível — v0.1
 
-Protótipo da disciplina Fundamentos de Programação (AV2). A documentação completa está em [Rota patrimonial acessivel.md](./Rota%20patrimonial%20acessivel.md).
+Protótipo da disciplina Fundamentos de Programação (AV2). A documentação completa está em [docs/Rota patrimonial acessivel.md](./docs/Rota%20patrimonial%20acessivel.md).
 
 ## Objetivo, usuário e escopo
 
